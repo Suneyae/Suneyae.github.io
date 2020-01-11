@@ -20,7 +20,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   <meta name="renderer" content="webkit">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no", user-scalable=no">
-  <title>Hello World卫永乐</title>
+  <title>部署自己的个人网站卫永乐</title>
   <link rel="shortcut icon" href="">
   
     
@@ -109,8 +109,8 @@
             </header>
                 
 <header class="blog-post-page-title">
-    <h4>Hello World</h4>
-    <time datetime="2020-01-01T10:51:29.640Z"><i class="fa fa-clock-o"></i>2020-01-01</time>
+    <h4>部署自己的个人网站</h4>
+    <time datetime="2020-01-11T08:31:00.759Z"><i class="fa fa-clock-o"></i>2020-01-11</time>
     
     
     
@@ -122,19 +122,103 @@
     <article class="blog-post-block blog-post-page-content">
         <section>
             
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+                <p>转载自<a href="https://zhuanlan.zhihu.com/p/78467553" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/78467553</a></p>
+<p>拥有自己的个人网站一直是我的一个目标。</p>
+<p>在网上看了很多方法之后我最终选择了GitHub Pages + Hexo这条技术路线，原因有两点：</p>
+<ul>
+<li>完全免费，学生党没有多少钱。</li>
+<li>比较方便，有现成的框架可用。</li>
+</ul>
+<p>整个搭建过程快的话半小时就可以搞定。</p>
+<p>搭建完成后大概是这样子的：<a href="https://link.zhihu.com/?target=https%3A//chen-qingyu.github.io/">青羽的博客</a></p>
+<hr>
+<h2 id="1-准备环境"><a href="#1-准备环境" class="headerlink" title="1. 准备环境"></a>1. 准备环境</h2><p>准备一个GitHub账号：<a href="https://link.zhihu.com/?target=https%3A//github.com/">GitHub</a></p>
+<p>新建一个Repositories，Repository name填 <code>你的GitHub用户名.github.io</code></p>
+<p><img src="https://pic3.zhimg.com/80/v2-d3137c031df689b13a24db898a87e5aa_hd.png" alt="img"></p>
+<p>下载并安装NodeJS：<a href="https://link.zhihu.com/?target=https%3A//nodejs.org/">Node.js</a></p>
+<p>下载并安装Git for Windows：<a href="https://link.zhihu.com/?target=https%3A//gitforwindows.org/">Git for Windows</a></p>
+<h2 id="2-配置Git"><a href="#2-配置Git" class="headerlink" title="2. 配置Git"></a>2. 配置Git</h2><p>鼠标右键打开Git Bash：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-380fd5967d88ee7f557439ee20fa8a2d_hd.jpg" alt="img"></p>
+<p>输入命令配置用户名和邮箱信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的GitHub用户名"</span></span><br><span class="line">git config --global user.email <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>生成ssh密钥文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>默认不设置密码，直接回车就行。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-a84591b299962c694c4b39efc2bce92c_hd.png" alt="img"></p>
+<p>用文本编辑器打开生成的id_rsa.pub文件，Crtl+A，Ctrl+C复制全部内容。</p>
+<p>打开GitHub的SSH设置页面：<a href="https://link.zhihu.com/?target=https%3A//github.com/settings/keys">SSH and GPG keys</a></p>
+<p>New SSH key，Title任取，Key粘贴刚刚复制的字符串，Add SSH key</p>
+<h2 id="3-配置Hexo"><a href="#3-配置Hexo" class="headerlink" title="3. 配置Hexo"></a>3. 配置Hexo</h2><p>Hexo是一个博客框架。接下来，开始安装Hexo。</p>
+<p>选定一个文件夹作为存放博客文件的目录，在选定的文件夹内右键打开Git Bash，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>等待安装完成后，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>这里的<code>blog</code>是用户自己取的一个站点目录名字。</p>
+<p>初始化完成后进入站点目录并安装依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>到这一步，本地博客算是搭建好了，测试一下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>s是server的缩写，表示启动本地服务器。默认情况下，访问网址是：<a href="https://link.zhihu.com/?target=http%3A//localhost%3A4000/">http://localhost:4000/</a></p>
+<p>如果成功的话可以看见官方的默认页面：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-ad9e5a544b2666c8aa69e1cd03ea0e22_hd.jpg" alt="img"></p>
+<h2 id="4-部署网站"><a href="#4-部署网站" class="headerlink" title="4. 部署网站"></a>4. 部署网站</h2><p>在站点目录下可以看到有如下文件：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-a9262644395cf56a7aa3f33a0ab1aeff_hd.jpg" alt="img"></p>
+<p>其中_config.yml为站点配置文件，用文本编辑器打开，Crtl+F查找 <code>url</code> 字段，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://你的GitHub用户名.github.io/</span></span><br></pre></td></tr></table></figure>
+
+<p>再翻到最后找到 <code>deploy</code> 字段，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/你的GitHub用户名/你的GitHub用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的 <code>repo</code> 字段的值可以直接从GitHub仓库复制：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-c813ad06e150c52bb2ac1b51c401dce5_hd.jpg" alt="img"></p>
+<p>部署之前要先安装Git部署插件，输入命令（注意：之后的命令均在站点目录下执行）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>最后，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>g是generate的缩写，表示生成静态文件；d是deploy的缩写，表示部署到网站上。</p>
+<p>打开浏览器，输入你的网站地址：<code>https://你的GitHub用户名.github.io/</code>，就可以看到你的网站已经上线了，大功告成！</p>
+<h2 id="5-发布文章"><a href="#5-发布文章" class="headerlink" title="5. 发布文章"></a>5. 发布文章</h2><p>在命令行中输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"HelloWorld"</span></span><br></pre></td></tr></table></figure>
+
+<p>n是new的缩写，表示新建一篇文章。</p>
+<p>就可以看到在source/_posts目录下多了一个HelloWorld.md文件，这就是一篇文章的源文件了。写完之后生成、部署即可。</p>
+<p>文章使用Markdown写成，关于Markdown可参考：<a href="https://link.zhihu.com/?target=https%3A//www.runoob.com/markdown/md-tutorial.html">Markdown 教程 | 菜鸟教程</a></p>
+<p>要删除文章的话，直接把源文件删除即可（确保至少有一篇文章存在，否则可能出错）。</p>
+<h2 id="6-优化网站"><a href="#6-优化网站" class="headerlink" title="6. 优化网站"></a>6. 优化网站</h2><h3 id="1-更换主题"><a href="#1-更换主题" class="headerlink" title="1. 更换主题"></a>1. 更换主题</h3><p>Hexo有许多好看的主题，这里以我用的NexT主题为例讲解怎样更换主题：</p>
+<ol>
+<li>下载主题：<a href="https://link.zhihu.com/?target=https%3A//github.com/theme-next/hexo-theme-next/releases">Releases · theme-next/hexo-theme-next</a></li>
+<li>解压所下载的压缩包至站点的 themes 目录下，并将解压后的文件夹名称（hexo-theme-next-x.x.x）更改为 <code>next</code></li>
+<li>打开站点配置文件_config.yml，找到 <code>theme</code> 字段，并将其值更改为 <code>next</code> ；找到 <code>language</code> 字段，并将其值更改为 <code>zh-CN</code>（在themes/next/languages目录下可查看主题支持的语言）</li>
+<li>在切换主题之后， 我们最好使用 <code>hexo clean</code> 命令来清除 Hexo 的缓存</li>
+</ol>
+<p>在更换了主题之后界面美观了许多，终于可以舒舒服服地写文章啦~</p>
+<p>但是很不好意思，倘若你的文章里有LaTeX公式或者图片，你会发现显示不正常……</p>
+<p>作为一名技术宅，文章里怎么可能不用公式不用图片嘛，这两个坑必须解决了！</p>
+<h3 id="2-插入LaTeX公式"><a href="#2-插入LaTeX公式" class="headerlink" title="2. 插入LaTeX公式"></a>2. 插入LaTeX公式</h3><p>更换支持LaTeX公式的Markdown渲染器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+
+<p>打开主题配置文件（themes/next/_config.yml），找到 <code>math</code> 字段，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>至此，LaTeX公式插入问题解决！</p>
+<h3 id="3-插入图片"><a href="#3-插入图片" class="headerlink" title="3. 插入图片"></a>3. 插入图片</h3><p>首先打开站点配置文件_config.yml，找到 <code>post_asset_folder</code> 字段，并将其值更改为 <code>true</code> ，这样新建文章的同时Hexo会自动在同目录下新建一个以文章名命名的空文件夹以方便存放该文章要用到的资源。</p>
+<p>安装一个能上传本地图片的插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>假设在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+---HelloWorld</span><br><span class="line">|   +-- 1.jpg</span><br><span class="line">|   +-- 2.jpg</span><br><span class="line">|   +-- 3.jpg</span><br><span class="line">+---HelloWorld.md</span><br></pre></td></tr></table></figure>
+
+<p>这样的目录结构（目录名和文章名一致）中，在文章源代码里只要使用形如 <code>![](HelloWorld/1.jpg)</code> 这样的语句就可以插入图片了~</p>
+<h3 id="4-更多"><a href="#4-更多" class="headerlink" title="4. 更多"></a>4. 更多</h3><p>关于Hexo框架的更多信息请参考：<a href="https://link.zhihu.com/?target=https%3A//hexo.io/">Hexo</a></p>
+<p>关于NexT主题的更多信息请参考：<a href="https://link.zhihu.com/?target=https%3A//theme-next.org/">NexT - Theme for Hexo</a></p>
 
             
         </section>
@@ -148,10 +232,10 @@
     	
     	
 		
-			<a href="/2020/01/01/%E6%88%91%E6%98%AF%E5%8D%AB%E7%81%B5%E7%8A%80%E7%9A%84%E7%88%B8%E7%88%B8/" class="blog-post-page-readmore-prev" data-toggle="tooltip" data-placement="top" title="我是卫灵犀的爸爸">上一篇</a>
-		
 
 		
+		
+			<a href="/2020/01/11/Typora%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" class="blog-post-page-readmore-next" data-toggle="tooltip" data-placement="top" title="Typora的简单使用">下一篇</a>
 		
 
         <div style="clear: both;"></div>
@@ -254,7 +338,7 @@
                 return out;
             }
             // 生成
-            var qrcode= $('.post-qrcode-content-canvas').qrcode({width: 150,height: 150,text: toUtf8("https://suneyae.github.io/2020/01/01/hello-world/")}).hide();
+            var qrcode= $('.post-qrcode-content-canvas').qrcode({width: 150,height: 150,text: toUtf8("https://suneyae.github.io/2020/01/11/%E9%83%A8%E7%BD%B2%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/")}).hide();
             var canvas=qrcode.find('canvas').get(0);
             $('.post-qrcode-content-img').attr('src',canvas.toDataURL('image/jpg'));
         </script>
